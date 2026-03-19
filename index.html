@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banco de Horas</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+
+<div class="layout">
+
+  <div class="form-container">
+    <h1>Banco de Horas</h1>
+
+    <div class="grid">
+
+      <div class="form-group full-width">
+        <label>Usuário</label>
+        <input type="text" id="usuario" placeholder="Ex: Milena">
+      </div>
+
+      <div class="form-group">
+        <label>Carga horária diária</label>
+        <input type="number" id="cargaHoraria" value="8">
+      </div>
+
+      <div class="form-group">
+        <label>Horas negativas atuais</label>
+        <input type="number" id="horasNegativas" step="0.5" value="0">
+      </div>
+
+      <div class="form-group">
+        <label>Data</label>
+        <input type="date" id="data">
+      </div>
+
+      <div class="form-group">
+        <label>Entrada</label>
+        <input type="time" id="entrada">
+      </div>
+
+      <div class="form-group">
+        <label>Saída</label>
+        <input type="time" id="saida">
+      </div>
+
+    </div>
+
+    <div style="display: flex; gap: 10px; margin-top: 15px;">
+      <button id="registrar">Registrar</button>
+      <button onclick="exportarExcel()">Exportar Excel</button>
+      <button onclick="exportarPDF()">Exportar PDF</button>
+    </div>
+
+    <div id="aviso"></div>
+    <div id="resultado"></div>
+  </div>
+
+  <div class="dashboard-container">
+
+    <div class="cards">
+      <div class="card">
+        <h4>Horas Hoje</h4>
+        <p id="cardHoras">0h</p>
+      </div>
+
+      <div class="card">
+        <h4>Saldo do Dia</h4>
+        <p id="cardSaldoDia">0h</p>
+      </div>
+
+      <div class="card">
+        <h4>Saldo Total</h4>
+        <p id="cardSaldoTotal">0h</p>
+      </div>
+    </div>
+
+    <div class="metrics">
+      <div class="metric"><span>Média</span><strong id="mediaHoras">0h</strong></div>
+      <div class="metric"><span>Total</span><strong id="totalHoras">0h</strong></div>
+      <div class="metric"><span>Positivos</span><strong id="diasPositivos">0</strong></div>
+      <div class="metric"><span>Negativos</span><strong id="diasNegativos">0</strong></div>
+    </div>
+
+    <canvas id="graficoHoras"></canvas>
+
+    <div class="historico">
+      <h3>Histórico</h3>
+      <div id="listaHistorico"></div>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

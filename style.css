@@ -1,0 +1,177 @@
+:root {
+  --bg: #f4f6f9;
+  --card: #ffffff;
+  --input: #e9ecef;
+  --text: #212529;
+  --primary: #0d6efd;
+  --positive: #198754;
+  --negative: #dc3545;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* LAYOUT PRINCIPAL */
+.layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 30px auto;
+}
+
+/* FORM */
+.form-container {
+  background: var(--card);
+  padding: 25px;
+  border-radius: 12px;
+}
+
+h1 {
+  color: var(--primary);
+  text-align: center;
+}
+
+/* GRID FORM */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.full-width {
+  grid-column: span 2;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+input {
+  padding: 10px;
+  background: var(--input);
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  height: 42px;
+}
+
+/* BOTÃO */
+button {
+  margin-top: 15px;
+  padding: 12px 20px;
+  background: var(--primary);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  width: auto;
+}
+
+button:hover {
+  background: #0b5ed7;
+}
+
+/* DASHBOARD */
+.dashboard-container {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.cards {
+  display: flex;
+  gap: 10px;
+}
+
+.card {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+}
+
+.card h4 {
+  color: var(--primary);
+  font-size: 14px;
+}
+
+.card p {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* GRÁFICO */
+canvas {
+  margin-top: 20px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* HISTÓRICO */
+.historico {
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+#aviso {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+#exportar {
+  margin-left: 10px;
+  background: #6c757d;
+}
+
+#exportar:hover {
+  background: #5a6268;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.metric {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px;
+  text-align: center;
+  background: var(--card);
+}
+
+.metric span {
+  font-size: 12px;
+  color: #666;
+}
+
+.metric strong {
+  display: block;
+  margin-top: 5px;
+}
